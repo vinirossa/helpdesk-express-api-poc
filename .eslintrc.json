@@ -1,0 +1,36 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+        "indent": "off",
+        "semi": "off",
+        "no-console": ["warn"],
+        // Off to use from TS
+        "import/prefer-default-export": "off",
+        "no-useless-constructor": "off",
+        "quotes": "off",
+        // TypeScript
+        "@typescript-eslint/semi": ["error"],
+        "@typescript-eslint/indent": ["error", 4],
+        "@typescript-eslint/quotes": ["error", "double"],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-floating-promises": ["error"],
+        "@typescript-eslint/require-await": "error"
+    }
+}
