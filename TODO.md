@@ -1,0 +1,23 @@
+-   Enum de profile [OK]
+-   AutoMapper [OK]
+    -   Problema abstract class [OK]
+-   FluentValidation para view models [OK]
+-   Validator para o user service [OK]
+-   Banco de Dados
+    -   Migrar do KnexJS para o TypeORM [PRIORIDADE]
+    -   Postgres
+        -   auto "id" e "created at..."
+        -   campo email ser unique
+        -   Criptografar a senha
+-   Criar base controller, base service e base repository
+-   Melhorar error handler com padrões HTTP
+-   Forçar res.status a user enum
+-   Auth
+-   Log
+-   Swagger e docs
+
+-   Seguir padrões
+    -   Clean ARCH
+    -   SOLID
+    -   DDD
+    -   REST
