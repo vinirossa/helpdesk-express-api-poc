@@ -18,19 +18,26 @@
     },
     "plugins": ["@typescript-eslint"],
     "rules": {
+        "no-console": "warn",
+        "no-underscore-dangle": "off",
+        "max-len": ["error", { "code": 130 }],
+        "no-param-reassign": ["error", { "props": false }],
+        "radix": "off",
+        // Off to use from TS
         "indent": "off",
         "semi": "off",
-        "no-console": ["warn"],
-        // Off to use from TS
+        "quotes": "off",
         "import/prefer-default-export": "off",
         "no-useless-constructor": "off",
-        "quotes": "off",
+        "no-restricted-syntax": "off",
         // TypeScript
-        "@typescript-eslint/semi": ["error"],
         "@typescript-eslint/indent": ["error", 4],
+        "@typescript-eslint/semi": "error",
         "@typescript-eslint/quotes": ["error", "double"],
         "@typescript-eslint/explicit-function-return-type": "error",
-        "@typescript-eslint/no-floating-promises": ["error"],
-        "@typescript-eslint/require-await": "error"
-    }
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/require-await": "error",
+        "@typescript-eslint/no-unused-vars": "warn"
+    },
+    "ignorePatterns": ["src/db/migrations/**/*.ts"]
 }

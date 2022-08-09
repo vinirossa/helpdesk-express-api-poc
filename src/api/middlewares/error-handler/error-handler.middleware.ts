@@ -13,7 +13,7 @@ export function errorHandler(
         res
             .status(HttpStatusCode.BadRequest)
             .send(new BaseResponse(
-                err.name,
+                "BusinessError",
                 err.message,
                 HttpStatusCode.BadRequest,
                 err.details ? err.details : undefined,
@@ -23,7 +23,7 @@ export function errorHandler(
             .status(HttpStatusCode.InternalServerError)
             .send(new BaseResponse(
                 err.name,
-                err.message,
+                err.name === "SyntaxError" && err.message.includes("JSON") ? "Invalid JSON" : err.message,
                 HttpStatusCode.InternalServerError,
                 err.toString(),
             ));

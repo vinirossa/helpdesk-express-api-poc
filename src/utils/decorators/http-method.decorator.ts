@@ -23,6 +23,9 @@ function createRoute(
         case HttpMethod.DELETE:
             router.delete(path, middleware);
             break;
+        case HttpMethod.HEAD:
+            router.head(path, middleware);
+            break;
         case HttpMethod.OPTIONS:
             router.options(path, middleware);
             break;
@@ -58,6 +61,12 @@ export function HttpPatch(router: Router, path: string = "/") {
 export function HttpDelete(router: Router, path: string = "/") {
     return (target: any, propertyKey: string, descriptor: PropertyDescriptor): void => {
         createRoute(HttpMethod.DELETE, router, path, descriptor.value);
+    };
+}
+
+export function HttpHead(router: Router, path: string = "/") {
+    return (target: any, propertyKey: string, descriptor: PropertyDescriptor): void => {
+        createRoute(HttpMethod.HEAD, router, path, descriptor.value);
     };
 }
 

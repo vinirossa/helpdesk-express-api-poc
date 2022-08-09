@@ -1,13 +1,15 @@
 export interface BaseModel {
     id: string;
 
-    active: boolean;
-
     createdAt: Date;
 
-    createdBy: Date;
+    createdBy: string | null;
 
-    updatedAt: Date;
+    updatedAt: Date | null;
 
-    updatedBy: string;
+    updatedBy: string | null;
+}
+
+export interface BaseActiveModel extends BaseModel {
+    active: boolean;
 }

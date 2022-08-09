@@ -1,5 +1,6 @@
 export enum NodeEnv {
+    LCL = "local",
     DEV = "development",
-    HMA = "homologation",
+    QAS = "quality-assurance",
     PRD = "production",
 }

@@ -2,8 +2,10 @@
     "compilerOptions": {
         "outDir": "dist/js",
         "target": "ES5",
+        "moduleResolution": "node",
         "noEmitOnError": true,
         "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
         "removeComments": true,
         "strict": true,
         "strictNullChecks": true,
@@ -11,7 +13,13 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "sourceMap": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs"
+        }
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]

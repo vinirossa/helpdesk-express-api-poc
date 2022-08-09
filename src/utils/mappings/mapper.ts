@@ -1,13 +1,11 @@
 /* eslint-disable import/first */
-import { createMap, createMapper } from "@automapper/core";
+import { addProfile, createMapper } from "@automapper/core";
 import { classes } from "@automapper/classes";
-import { User } from "../../business/user/user.model";
-import { UserViewModel } from "../../business/user/user.view.model";
+import { UserProfile } from "../../business/user/user.profile";
 
 // Create and export the mapper
 export const mapper = createMapper({
     strategyInitializer: classes(),
 });
 
-createMap(mapper, UserViewModel, User);
-createMap(mapper, User, UserViewModel);
+addProfile(mapper, UserProfile.profile());
